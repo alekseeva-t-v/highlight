@@ -1,8 +1,10 @@
 const Popular = (props) => {
+  const { children } = props;
+
   return (
     <div className="wrap-item wrap-item-popular">
       <span className="label">Popular!</span>
-      {props.children}
+      {children}
     </div>
   );
 };

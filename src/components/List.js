@@ -1,14 +1,16 @@
-import Video from "./Video";
-import Article from "./Article";
+import Video from './Video';
+import Article from './Article';
+import withWrapper from './withWrapper';
+import { nanoid } from 'nanoid';
 
 const List = (props) => {
-  return props.list.map((item) => {
-    switch (item.type) {
-      case 'video':
-        return <Video {...item} />;
+  const { list } = props;
 
-      case 'article':
-        return <Article {...item} />;
+  return list.map((item) => {
+    if (item.type === 'video') {
+      return withWrapper(Video)({...item, key: nanoid()})
+    } else if (item.type === 'article') {
+      return withWrapper(Article)({...item, key: nanoid()});
     }
   });
 };

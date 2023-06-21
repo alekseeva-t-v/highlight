@@ -1,13 +1,9 @@
 const Video = (props) => {
+  const { url, views } = props;
   return (
     <div className="item item-video">
-      <iframe
-        src={props.url}
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-      ></iframe>
-      <p className="views">Просмотров: {props.views}</p>
+      <iframe src={url} title={url} allow="autoplay; encrypted-media"></iframe>
+      <p className="views">Просмотров: {views}</p>
     </div>
   );
 };
