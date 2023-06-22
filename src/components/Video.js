@@ -1,3 +1,8 @@
+/**
+ * Компонент отвечающий за вывод блока отдельного видео. Родительский компонент List.
+ * @param {string} props.url адрес видео
+ * @param {number} props.views количество просмотров
+ */
 const Video = (props) => {
   const { url, views } = props;
   return (
